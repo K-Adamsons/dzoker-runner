@@ -24,13 +24,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Baterijas</a>
+    <a id="Baterija" onclick="BaterijaSaturs()" class="w3-bar-item w3-button w3-padding-large w3-white">Baterijas</a>
     <a id="Akumula" onclick="AkumSaturs()" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Akumulators</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Akumulators</a>
+    <a id="Akumula" onclick="AkumSaturs()" class="w3-bar-item w3-button w3-padding-large">Akumulators</a>
   </div>
 </div>
 
@@ -51,7 +51,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
 
     <div class="w3-third w3-center">
-      <img src="https://www.shutterstock.com/shutterstock/videos/1036223846/thumb/8.jpg?ip=x480"></i>
+      <img width="450" height="300" src="https://uxwing.com/wp-content/themes/uxwing/download/computers-mobile-hardware/battery-level-full-icon.png"></i>
     </div>
   </div>
 </div>
@@ -125,7 +125,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
   
- <p>Powered by <a href="https://likumi.lv/ta/id/57980-latvijas-republikas-satversme" target="_blank">LR</a></p>
+ <p class="w3-text-white">Powered by <a href="https://likumi.lv/ta/id/57980-latvijas-republikas-satversme" target="_blank">LR</a></p>
 </footer>
 
 <script>
@@ -137,6 +137,12 @@ function myFunction() {
   } else { 
     x.className = x.className.replace(" w3-show", "");
   }
+}
+function AkumSaturs(){
+
+}
+function BaterijaSaturs(){
+
 }
 </script>
 

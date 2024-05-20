@@ -7,7 +7,7 @@ screen = pygame.display.set_mode((1280, 720))
 clock = pygame.time.Clock()
 pygame.display.set_caption("Dino Game")
 
-game_font = pygame.font.Font("assets/PressStart2P-Regular.ttf", 24)
+game_font = pygame.font.Font("assets/Paintingwithchocolate-K5mo.ttf", 24) #Sets the font for text
 
 # Classes
 
@@ -31,40 +31,40 @@ class Dino(pygame.sprite.Sprite):
         self.ducking_sprites = []
 
         self.running_sprites.append(pygame.transform.scale(
-            pygame.image.load("assets/Dino1.png"), (80, 100)))
+            pygame.image.load("assets/dzokerrun1.png"), (80, 100)))
         self.running_sprites.append(pygame.transform.scale(
-            pygame.image.load("assets/Dino2.png"), (80, 100)))
+            pygame.image.load("assets/dzokerrun2.png"), (80, 100)))
 
         self.ducking_sprites.append(pygame.transform.scale(
-            pygame.image.load(f"assets/DinoDucking1.png"), (110, 60)))
+            pygame.image.load(f"assets/dzokerduck1.png"), (110, 60)))
         self.ducking_sprites.append(pygame.transform.scale(
-            pygame.image.load(f"assets/DinoDucking2.png"), (110, 60)))
+            pygame.image.load(f"assets/dzokerduck2.png"), (110, 60)))
 
         self.x_pos = x_pos
         self.y_pos = y_pos
         self.current_image = 0
         self.image = self.running_sprites[self.current_image]
         self.rect = self.image.get_rect(center=(self.x_pos, self.y_pos))
-        self.velocity = 50
-        self.gravity = 4.5
+        self.velocity = 20 #Jump height
+        self.gravity = 4 #Gravity force
         self.ducking = False
 
     def jump(self):
         jump_sfx.play()
-        if self.rect.centery >= 360:
+        if self.rect.centery >= 360: #when game lets you jump
             while self.rect.centery - self.velocity > 40:
                 self.rect.centery -= 1
 
     def duck(self):
         self.ducking = True
-        self.rect.centery = 380
+        self.rect.centery = 380 #sets your position lower when ducking
 
     def unduck(self):
         self.ducking = False
-        self.rect.centery = 360
+        self.rect.centery = 360 #nuetral position
 
     def apply_gravity(self):
-        if self.rect.centery <= 360:
+        if self.rect.centery <= 360: #any position less than 360, the player will be affected by gravity i.e when player jumps, grav stops working when the player reach the ground
             self.rect.centery += self.gravity
 
     def update(self):
@@ -74,7 +74,7 @@ class Dino(pygame.sprite.Sprite):
     def animate(self):
         self.current_image += 0.05
         if self.current_image >= 2:
-            self.current_image = 0
+            self.current_image = 0   #switches the player image with another slightly diff  player image, so it looks like its moving
 
         if self.ducking:
             self.image = self.ducking_sprites[int(self.current_image)]

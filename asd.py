@@ -108,10 +108,10 @@ class Ptero(pygame.sprite.Sprite):
         self.sprites = []
         self.sprites.append(
             pygame.transform.scale(
-                pygame.image.load("assets/Ptero1.png"), (84, 62)))
+                pygame.image.load("assets/bat1.png"), (84, 62)))
         self.sprites.append(
             pygame.transform.scale(
-                pygame.image.load("assets/Ptero2.png"), (84, 62)))
+                pygame.image.load("assets/bat2.png"), (84, 62)))
         self.current_image = 0
         self.image = self.sprites[self.current_image]
         self.rect = self.image.get_rect(center=(self.x_pos, self.y_pos))

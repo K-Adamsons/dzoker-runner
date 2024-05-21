@@ -88,9 +88,9 @@ class Cactus(pygame.sprite.Sprite):
         self.x_pos = x_pos
         self.y_pos = y_pos
         self.sprites = []
-        for i in range(1, 7):
+        for i in range(1, 5):
             current_sprite = pygame.transform.scale(
-                pygame.image.load(f"assets/cacti/cactus{i}.png"), (100, 100))
+                pygame.image.load(f"assets/pukes/puke{i}.png"), (100, 100))
             self.sprites.append(current_sprite)
         self.image = random.choice(self.sprites)
         self.rect = self.image.get_rect(center=(self.x_pos, self.y_pos))
@@ -144,7 +144,7 @@ ground = pygame.image.load("assets/ground.png")
 ground = pygame.transform.scale(ground, (1280, 20))
 ground_x = 0
 ground_rect = ground.get_rect(center=(640, 400))
-cloud = pygame.image.load("assets/cloud.png")
+cloud = pygame.image.load("assets/dragon.png")
 cloud = pygame.transform.scale(cloud, (200, 80))
 
 # Groups

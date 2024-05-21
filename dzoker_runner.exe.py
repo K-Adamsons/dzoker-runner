@@ -5,7 +5,7 @@ import random
 pygame.init()
 screen = pygame.display.set_mode((1280, 720))
 clock = pygame.time.Clock()
-pygame.display.set_caption("Dino Game")
+pygame.display.set_caption("Džoker RUNNER")
 
 game_font = pygame.font.Font("assets/Paintingwithchocolate-K5mo.ttf", 24) #Sets the font for text
 
